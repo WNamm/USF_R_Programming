@@ -23,6 +23,7 @@ tukey_multiple <- function(x) {
   { outlier.vec[i] <- all(outliers[i,]) }
   return(outlier.vec) }
 #Some code is added to test the tukey_multiple() function.
-sample <- matrix(1:30, byrow = T, nrow = 5)
+set.seed(252)
+sample <- matrix(floor(runif(n=30, max=50)), nrow = 5)
 sample
 tukey_multiple(sample)
