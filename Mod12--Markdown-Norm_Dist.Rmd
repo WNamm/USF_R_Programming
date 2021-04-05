@@ -1,0 +1,38 @@
+---
+title: "Normal Distribution"
+author: "William Namm"
+date: "4/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+We will be investigating an example of a random normal distribution in R and how to make a histogram out of it.
+
+## Creating the Data Set
+First, we use the set.seed() function to define the seed for the random number generator.
+This will produce consistent results among different runs of the program.
+Then, we use the rnorm() function to create the data set within the norm.dist variable.
+```{r}
+set.seed(537)
+norm.dist <- floor(rnorm(n=50, mean=30, sd=7))
+norm.dist
+```
+The floor() function rounds the numbers down to easily-manageable integers.
+
+## Displaying the data
+The data can be displayed as a histogram via the following code:
+```{r}
+hist(norm.dist)
+```
+  
+We can change the title with the main argument and the axis labels with xlab and ylab arguments. Here is an example:
+```{r}
+hist(norm.dist, main="Normal Distribution", xlab="Data Points")
+```
+  
+From the graph, we can see that this particular data set roughly follows a normal distribution.
+However, it has some positive skew.
